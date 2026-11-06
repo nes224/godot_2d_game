@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://bx8il7f123smc"]
+
+[ext_resource type="Texture2D" uid="uid://b14g0vjny1w0h" path="res://Assets/ui/panel_beige.png" id="1_enugf"]
+[ext_resource type="Script" path="res://Scenes/Main/LevelButton.gd" id="2_ehy24"]
+[ext_resource type="FontFile" uid="uid://v0k2f1ibvin7" path="res://Assets/fonts/LuckiestGuy-Regular.ttf" id="2_l0uoo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tvkkg"]
+font = ExtResource("2_l0uoo")
+font_size = 48
+outline_size = 6
+outline_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rx1ts"]
+font = ExtResource("2_l0uoo")
+font_size = 28
+outline_size = 6
+outline_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+
+[node name="LevelButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_enugf")
+script = ExtResource("2_ehy24")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 12
+
+[node name="VB" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/VB"]
+layout_mode = 2
+text = "99"
+label_settings = SubResource("LabelSettings_tvkkg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VB"]
+layout_mode = 2
+text = "9999
+"
+label_settings = SubResource("LabelSettings_rx1ts")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
