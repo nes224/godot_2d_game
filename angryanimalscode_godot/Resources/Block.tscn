@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpl510lhwrai5"]
+
+[ext_resource type="Script" path="res://Resources/Block.gd" id="1_4u6g6"]
+[ext_resource type="Texture2D" uid="uid://2sehnk2ywigy" path="res://Assets/env/elementStone025.png" id="1_wh6le"]
+[ext_resource type="AudioStream" uid="uid://bfy4vbiuhv68c" path="res://Assets/audio/catapult.ogg" id="2_2tb2h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54uvu"]
+size = Vector2(67, 218)
+
+[node name="Block" type="StaticBody2D"]
+script = ExtResource("1_4u6g6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wh6le")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_54uvu")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_2tb2h")

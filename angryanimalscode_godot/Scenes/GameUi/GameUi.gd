@@ -1,5 +1,6 @@
 extends Control
 
+const MAIN = preload("res://Scenes/Main/Main.tscn")
 
 var _total_cups: int = 0
 var _current_cups: int = 0
@@ -8,6 +9,10 @@ var _attempts: int = 0
 @onready var vb_complete = $VbComplete
 @onready var music = $Music
 @onready var attempts_label = $MC/VB/HBAttempts2/AttemptsLabel
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_packed(MAIN)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,4 +31,5 @@ func on_cup_destroyed() -> void:
 	if _current_cups == _total_cups:
 		vb_complete.show()
 		music.play()
+		ScoreManager.set_score_for_current_level(_attempts)
 		get_tree().paused = true

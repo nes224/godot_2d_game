@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelScoresResource" load_steps=2 format=3 uid="uid://dvg2g7cyj8nik"]
+
+[ext_resource type="Script" path="res://Classes/LevelScoresResource.gd" id="1_chcpv"]
+
+[resource]
+script = ExtResource("1_chcpv")
+level_scores = {
+1: 9,
+2: 12,
+3: 30
+}

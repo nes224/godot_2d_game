@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgyx6omuurxrl"]
+[gd_scene load_steps=4 format=3 uid="uid://bgyx6omuurxrl"]
 
 [ext_resource type="PackedScene" uid="uid://dcy018ou1ln7d" path="res://Scenes/Main/LevelBase.tscn" id="1_knbpg"]
 [ext_resource type="PackedScene" uid="uid://b2dclakcisj3o" path="res://Scenes/Main/Cup.tscn" id="2_rcevw"]
+[ext_resource type="PackedScene" uid="uid://dpl510lhwrai5" path="res://Resources/Block.tscn" id="3_31pfh"]
 
 [node name="Level1" instance=ExtResource("1_knbpg")]
 
 [node name="Cup" parent="." index="4" instance=ExtResource("2_rcevw")]
 position = Vector2(506, 463)
+
+[node name="Block" parent="." index="5" instance=ExtResource("3_31pfh")]
+position = Vector2(653, 223)
+rotation = -0.578832
